@@ -1,11 +1,17 @@
 :root {
-  --h1-color: light-dark(#663399, #ff99cc);
+  --h1-color: light-dark(#3f126c, #ffe3f1);
   --headline-color: light-dark(deeppink, hotpink);
-  --anchor-color: light-dark(#123, #9cf);
+  --anchor-color: light-dark(#12c, #9cf);
+  --code-color: light-dark(#079, #2cf);
+  --kbd-bg-color: light-dark(rgb(255, 214, 234), #663399);
+  --kbd-color: light-dark(#000, #fff);
+  --footer-bg-color: var(#eee, #000);
+  --footer-color: var(#111, #fff);
 }
 
 html {
   color-scheme: dark light;
+  accent-color: hotpink;
 }
 
 body {
@@ -21,13 +27,10 @@ body {
   margin-inline: auto;
 }
 
-
-
-
 h1, h2, h3, h4 {
   font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.1;
   color: var(--headline-color);
 }
 
@@ -47,12 +50,25 @@ h3 {
   font-size: 2.441rem;
 }
 
+code {
+  color: var(--code-color);
+}
 
 a {
   color: var(--anchor-color);
 }
 
 kbd {
-  border: 1px solid currentColor;
-  padding: 1px 1ch;
+  background: var(--kbd-bg-color);
+  color: var(--kbd-color);
+  border-radius: 0.125em;
+  padding: 0.25em;
+}
+
+.footer {
+  background: var(--footer-bg-color);
+  color: var(--footer-color);
+  margin-block-start: 6rem;
+  text-align: center;
+  padding-block: 2rem;
 }

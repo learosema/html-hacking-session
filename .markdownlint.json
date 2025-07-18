@@ -1,4 +1,4 @@
 {"MD033": {
-      "allowed_elements": [ "a", "kbd" ]
+      "allowed_elements": [ "a", "kbd", "abbr"]
     }
   }
