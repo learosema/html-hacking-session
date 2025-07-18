@@ -1,0 +1,9 @@
+# System annoyances
+.DS_Store
+Thumbs.db
+
+# node annoyances
+node_modules
+
+# build output
+dist

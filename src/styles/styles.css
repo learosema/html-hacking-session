@@ -1,0 +1,49 @@
+:root {
+  --h1-color: light-dark(#663399, #ff99cc);
+  --headline-color: light-dark(deeppink, hotpink);
+  --anchor-color: light-dark(#123, #9cf);
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-weight: normal;
+  font-size: 120%;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--headline-color);
+}
+
+h1 {
+  color: var(--h1-color);
+  font-size: 3.815rem;
+  border: 0.25rem solid currentColor;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+h2 {
+  font-size: 3.052rem;
+}
+
+h3 {
+  font-size: 2.441rem;
+}
+
+
+a {
+  color: var(--anchor-color);
+}
+
+kbd {
+  border: 1px solid currentColor;
+  padding: 1px 1ch;
+}
