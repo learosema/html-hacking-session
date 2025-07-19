@@ -5,8 +5,8 @@
   --code-color: light-dark(#079, #2cf);
   --kbd-bg-color: light-dark(rgb(255, 214, 234), #663399);
   --kbd-color: light-dark(#000, #fff);
-  --footer-bg-color: var(#eee, #000);
-  --footer-color: var(#111, #fff);
+  --footer-bg-color: light-dark(#eee, #000);
+  --footer-color: light-dark(#111, #fff);
 }
 
 html {
