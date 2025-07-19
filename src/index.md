@@ -373,6 +373,20 @@ For example, see the footer of this page:
 </footer>
 ```
 
+## ESM Imports
+
+You can use `import` statements inside JavaScript.
+
+Just use `type="module"` to embed your JavaScript.
+
+```html
+<script type="module" src="main.js">
+```
+
+```js
+import confetti from 'https://esm.sh/confetti'
+```
+
 ## Quick Accessibility Testing tips
 
 - Check the accessibility tree inside your browser developer tools
