@@ -22,33 +22,55 @@ Hello World!
 
 This is already a valid HTML document. You don't even need
 to define a head or a body. You can even omit the
-top-most `<html>` tag. The only required tag is the `title>` element. 
+top-most `<html>` tag. The only required tag is the `<title>` element.
 
 ## Adding more Structure
 
 To be fair, you will want to have a little more structure to your document,
-like metadata for search engines, and maybe a top-level heading (`h1`) and a paragraph (`p`)
+like metadata for search engines, and maybe a top-level
+heading (`h1`) and a paragraph (`p`).
 
 ```html
 <!DOCTYPE html>
 <title>Hello World</title>
 <meta name="description" content="This is a description">
+<!-- who wrote this content ? -->
+<meta name="author" content="Lea Rosema">
+
+<!-- add a short description which will be shown under search results -->
+<meta name="description" content="A minisite about HTML and accessibility fundamentals.">
+
 <h1>Hello World</h1>
 <p>Welcome to my website!</p>
 ```
 
-## Adding emojis
+## Adding emojis and special characters
 
-As soon as you want to add emojis or any other non-standard character to your page, it is important to specify a charset. In most cases, this
-will be UTF-8.
+As soon as you want to add emojis or any other non-standard character,
+it is important to specify a charset.
+
+Non-standard characters means anything beyond latin letters, numbers,
+punctuation, brackets (basically anything beyond the ASCII standard).
+
+For example, this applies to German Umlauts, but definitely also emojis.
+
+You usually set it UTF-8.
 
 ```html
 <!DOCTYPE html>
 <meta charset="UTF-8">
+<!-- ... -->
 💖
 ```
 
-## Emmet
+## `head` and `body`
+
+Usually, you will want to define your metadata inside the `<head>`
+and the main content into the `<body>`.
+
+This is where Autocomplete features such as Emmet come in handy.
+
+## Autocomplete via Emmet
 
 If you have a modern text editor (VS Code, Webstorm, etc),
 you can use a super-power called emmet.
@@ -80,14 +102,14 @@ To generate a whole table with 3 columns and 4 rows, type `table>tr*2>td*3`.
 You get the idea.
 
 ```html
-<!-- Type: ul>li*3 -->
+<!-- Type: ul>li*3 then hit tab -->
 <ul>
   <li></li>
   <li></li>
   <li></li>
 </ul>
 
-<!-- Type: table>tr*4>td*3 -->
+<!-- Type: table>tr*2>td*3 then hit tab -->
 <table>
   <tr>
     <td></td>
@@ -102,16 +124,14 @@ You get the idea.
 </table>
 ```
 
+Generate dummy text:
+
+```html
+<!-- Type: lorem -->
+Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+```
+
 For more shortcuts and information about supported editors, visit <https://emmet.io/>.
-
-## Charset
-
-As soon as you add characters other than `a-z`, `A-Z`, `0-9`, and some standard
-characters like `!"§$%&/()=?`, you will need to specify a character set.
-
-For example, this applies to German Umlauts, but also emojis.
-
-Mostly, this will be UTF-8.
 
 ## Document language
 
@@ -119,21 +139,11 @@ The `lang`-attribute on the html element specifies the language used in the html
 document. It affects how screenreaders read the page, a wrong language setting
 will make it hard to understand.
 
-You can also add the lang attribute on any other element, making it possible to have 
-snippets of other languages inside the html.
+You can also add the lang attribute on any other element, making it possible to
+have snippets of other languages inside the html.
 
-The `lang` attribute also affects a couple other things, such as spellchecking in 
+The `lang` attribute also affects a couple other things, such as spellchecking in
 input elements
-
-## Additional Metadata
-
-```html
-<!-- who wrote this content ? -->
-<meta name="author" content="Lea Rosema">
-
-<!-- add a short description which will be shown under search results -->
-<meta name="description" content="A minisite about HTML and accessibility fundamentals.">
-```
 
 ## Alternative Text
 
@@ -148,13 +158,6 @@ On images, you can do so via the `alt` attribute:
 
 For purely decorative images, it is okay to add an empty string as an alt text.
 It is an accessibility issue to completely leave out the `alt` attribute.
-
-Generate dummy text:
-
-```html
-<!-- Type: lorem -->
-Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-```
 
 ### Elements other than `<img>`
 
@@ -225,8 +228,12 @@ of lorem ipsum.
 
 ## Multiple or no headlines
 
-It's not required to have a only one h1 (although it is a good idea)
+The HTML living standard does not specify to have a only one h1.
+
 It's also not required to have a h1 at all.
+
+Though, it is considered best practice to use exactly one h1 per page,
+which is also in the `<title>` of the document.
 
 ## Sub-Headlines
 
@@ -236,8 +243,11 @@ maybe refactor your document structure.
 
 You shouldn't skip heading levels (no h4 followed by a h2).
 
+See also:
+
 - You can also nest content into [sections](https://html.spec.whatwg.org/multipage/sections.html)
-- See also: [There is no outline algorithm](https://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html)
+- the [HTML spec](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements)
+- [There is no outline algorithm](https://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html)
 
 ## Anchors
 
@@ -387,6 +397,28 @@ Just use `type="module"` to embed your JavaScript.
 import confetti from 'https://esm.sh/confetti'
 ```
 
+Instead of full URLs in the import statement, you can simplify it and define
+aliases in an import map. This is a `<script type="importmap">` with
+some JSON inside. It defines an object with aliases.
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "canvas": "https://esm.sh/confetti@2.0.6",
+    }
+  }
+</script>
+```
+
+Then, you can use the dependency as if you have set up a bundler.
+
+```js
+import confetti from 'confetti'
+
+confetti()
+```
+
 ## Quick Accessibility Testing tips
 
 - Check the accessibility tree inside your browser developer tools
@@ -395,7 +427,9 @@ import confetti from 'https://esm.sh/confetti'
 - Check if all buttons have text
 - Check if all images have alt text
 - Check if the document language is set correctly.
-- Check your color contrasts are okay. You can use automated tool like
+- Check your color contrasts are okay.
+  You can manually check it via the [WebAIM Contras Checker](https://webaim.org/resources/contrastchecker/)
+- You can use automated tool like
   Lighthouse for this, which is integrated into Chrome Dev Tools.
 - See also the [WebAIM Million Report](https://webaim.org/projects/million/) mentioning
   the most common accessibility issues. Only focusing on these would already

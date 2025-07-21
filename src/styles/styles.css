@@ -2,7 +2,8 @@
   --h1-color: light-dark(#3f126c, #ffe3f1);
   --headline-color: light-dark(deeppink, hotpink);
   --anchor-color: light-dark(#12c, #9cf);
-  --code-color: light-dark(#079, #2cf);
+  --code-color: light-dark(#005b3e, #b9fff5);
+  --code-bg-color: light-dark(#fafafc, #20202d);
   --kbd-bg-color: light-dark(rgb(255, 214, 234), #663399);
   --kbd-color: light-dark(#000, #fff);
   --footer-bg-color: light-dark(#eee, #000);
@@ -52,6 +53,10 @@ h3 {
 
 code {
   color: var(--code-color);
+  background: var(--code-bg-color);
+  border-radius: 0.25rem;
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+  font-weight: 600;
 }
 
 a {
