@@ -435,6 +435,13 @@ confetti()
   the most common accessibility issues. Only focusing on these would already
   catch a lot of issues.
 
+## Issues
+
+Found something in this document you're not happy with? Totally fair point,
+I wrote it in the very late evening at the [Socrates 2025](https://socrates-conference.de).
+
+Please consider filing an issue or creating a pull request here: <https://github.com/learosema/html-hacking-session/>
+
 ## Further Resources
 
 - The HTML living standard: <https://html.spec.whatwg.org/>
