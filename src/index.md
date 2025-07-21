@@ -16,30 +16,30 @@ layout: base
 
 ```html
 <!DOCTYPE html>
+<title>Hello World</title>
 Hello World!
 ```
 
 This is already a valid HTML document. You don't even need
 to define a head or a body. You can even omit the
-top-most `<html>` tag.
+top-most `<html>` tag. The only required tag is the `title>` element. 
 
 ## Adding more Structure
 
 To be fair, you will want to have a little more structure to your document,
-like a page title and more metadata.
-
-## Adding a title
+like metadata for search engines, and maybe a top-level heading (`h1`) and a paragraph (`p`)
 
 ```html
 <!DOCTYPE html>
 <title>Hello World</title>
-Hello World!
+<meta name="description" content="This is a description">
+<h1>Hello World</h1>
+<p>Welcome to my website!</p>
 ```
 
 ## Adding emojis
 
-As soon as you want to add emojis to your page, it is
-important to specify a charset. In most cases, this
+As soon as you want to add emojis or any other non-standard character to your page, it is important to specify a charset. In most cases, this
 will be UTF-8.
 
 ```html
