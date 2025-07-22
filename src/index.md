@@ -405,7 +405,7 @@ some JSON inside. It defines an object with aliases.
 <script type="importmap">
   {
     "imports": {
-      "canvas": "https://esm.sh/confetti@2.0.6",
+      "confetti": "https://esm.sh/confetti@2.0.6",
     }
   }
 </script>
