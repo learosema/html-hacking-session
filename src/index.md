@@ -97,7 +97,7 @@ This will give you this:
 
 There are even more shortcuts to generate markup.
 To generate an unordered list of 3 elements, type `ul>li*3` and <kbd>tab</kbd>.
-To generate a whole table with 3 columns and 4 rows, type `table>tr*2>td*3`.
+To generate a whole table with 3 columns and 2 rows, type `table>tr*2>td*3`.
 
 You get the idea.
 
